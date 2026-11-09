@@ -1,0 +1,8 @@
+target/
+.direnv/**
+.bsp/**
+test.json
+
+**/client_secrets.json
+.tokens/
+.authdata/

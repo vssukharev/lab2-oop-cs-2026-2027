@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students_performance>
+
+    <student>
+        <full_name>Коваленко Олександр Олександрович</full_name>
+        <department>
+            <faculty>Факультет комп'ютерних наук та кібернетики</faculty>
+            <chair>Кафедра програмних систем</chair>
+            <course_year>2</course_year>
+            <group>К-21</group>
+        </department>
+        <courses>
+            <course>
+                <title>Об'єктно-орієнтоване програмування</title>
+                <credits>5.0</credits>
+                <grade>95</grade>
+                <grade_letter>A</grade_letter>
+            </course>
+            <course>
+                <title>Математичний аналіз</title>
+                <credits>6.0</credits>
+                <grade>88</grade>
+                <grade_letter>B</grade_letter>
+            </course>
+        </courses>
+    </student>
+
+
+    <student>
+        <full_name>Мельник Ірина Василівна</full_name>
+        <department>
+            <faculty>Механіко-математичний факультет</faculty>
+            <chair>Кафедра алгебри та комп'ютерної математики</chair>
+            <course_year>3</course_year>
+            <group>ММ-32</group>
+        </department>
+        <courses>
+            <course>
+                <title>Функціональний аналіз</title>
+                <credits>4.5</credits>
+                <grade>91</grade>
+                <grade_letter>A</grade_letter>
+            </course>
+            <course>
+                <title>Теорія алгоритмів</title>
+                <credits>4.0</credits>
+                <grade>79</grade>
+                <grade_letter>C</grade_letter>
+            </course>
+        </courses>
+    </student>
+
+    <student>
+        <full_name>Шевченко Дмитро Ігорович</full_name>
+        <department>
+            <faculty>Фізичний факультет</faculty>
+            <chair>Кафедра теоретичної фізики</chair>
+            <course_year>1</course_year>
+            <group>ФЗ-11</group>
+        </department>
+        <courses>
+            <course>
+                <title>Загальна фізика: Механіка</title>
+                <credits>6.0</credits>
+                <grade>74</grade>
+                <grade_letter>D</grade_letter>
+            </course>
+        </courses>
+    </student>
+
+</students_performance>
