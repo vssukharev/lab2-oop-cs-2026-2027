@@ -22,9 +22,14 @@
                 <grade>88</grade>
                 <grade_letter>B</grade_letter>
             </course>
+            <course>
+                <title>Дискретна математика</title>
+                <credits>4.5</credits>
+                <grade>92</grade>
+                <grade_letter>A</grade_letter>
+            </course>
         </courses>
     </student>
-
 
     <student>
         <full_name>Мельник Ірина Василівна</full_name>
@@ -47,6 +52,12 @@
                 <grade>79</grade>
                 <grade_letter>C</grade_letter>
             </course>
+            <course>
+                <title>Диференціальна геометрія</title>
+                <credits>5.0</credits>
+                <grade>84</grade>
+                <grade_letter>B</grade_letter>
+            </course>
         </courses>
     </student>
 
@@ -64,6 +75,372 @@
                 <credits>6.0</credits>
                 <grade>74</grade>
                 <grade_letter>D</grade_letter>
+            </course>
+            <course>
+                <title>Вища математика</title>
+                <credits>5.0</credits>
+                <grade>68</grade>
+                <grade_letter>E</grade_letter>
+            </course>
+        </courses>
+    </student>
+
+    <student>
+        <full_name>Бондаренко Софія Андріївна</full_name>
+        <department>
+            <faculty>Факультет комп'ютерних наук та кібернетики</faculty>
+            <chair>Кафедра штучного інтелекту</chair>
+            <course_year>4</course_year>
+            <group>К-42</group>
+        </department>
+        <courses>
+            <course>
+                <title>Машинне навчання</title>
+                <credits>5.5</credits>
+                <grade>98</grade>
+                <grade_letter>A</grade_letter>
+            </course>
+            <course>
+                <title>Глибинні нейронні мережі</title>
+                <credits>5.0</credits>
+                <grade>94</grade>
+                <grade_letter>A</grade_letter>
+            </course>
+            <course>
+                <title>Розпізнавання образів</title>
+                <credits>4.0</credits>
+                <grade>91</grade>
+                <grade_letter>A</grade_letter>
+            </course>
+        </courses>
+    </student>
+
+    <student>
+        <full_name>Ткаченко Максим Сергійович</full_name>
+        <department>
+            <faculty>Факультет комп'ютерних наук та кібернетики</faculty>
+            <chair>Кафедра програмних систем</chair>
+            <course_year>1</course_year>
+            <group>К-11</group>
+        </department>
+        <courses>
+            <course>
+                <title>Основи програмування</title>
+                <credits>6.0</credits>
+                <grade>82</grade>
+                <grade_letter>B</grade_letter>
+            </course>
+            <course>
+                <title>Лінійна алгебра</title>
+                <credits>4.5</credits>
+                <grade>75</grade>
+                <grade_letter>C</grade_letter>
+            </course>
+        </courses>
+    </student>
+
+    <student>
+        <full_name>Кравченко Юлія Володимирівна</full_name>
+        <department>
+            <faculty>Механіко-математичний факультет</faculty>
+            <chair>Кафедра диференціальних рівнянь</chair>
+            <course_year>2</course_year>
+            <group>ММ-21</group>
+        </department>
+        <courses>
+            <course>
+                <title>Диференціальні рівняння</title>
+                <credits>5.0</credits>
+                <grade>89</grade>
+                <grade_letter>B</grade_letter>
+            </course>
+            <course>
+                <title>Комплексний аналіз</title>
+                <credits>4.5</credits>
+                <grade>96</grade>
+                <grade_letter>A</grade_letter>
+            </course>
+            <course>
+                <title>Чисельні методи</title>
+                <credits>4.0</credits>
+                <grade>78</grade>
+                <grade_letter>C</grade_letter>
+            </course>
+        </courses>
+    </student>
+
+    <student>
+        <full_name>Мороз Богдан Олегович</full_name>
+        <department>
+            <faculty>Факультет радіофізики, електроніки та комп'ютерних систем</faculty>
+            <chair>Кафедра комп'ютерної інженерії</chair>
+            <course_year>3</course_year>
+            <group>РЕ-31</group>
+        </department>
+        <courses>
+            <course>
+                <title>Мікропроцесорні системи</title>
+                <credits>5.0</credits>
+                <grade>86</grade>
+                <grade_letter>B</grade_letter>
+            </course>
+            <course>
+                <title>Комп'ютерні мережі</title>
+                <credits>4.5</credits>
+                <grade>90</grade>
+                <grade_letter>A</grade_letter>
+            </course>
+            <course>
+                <title>Архітектура комп'ютерів</title>
+                <credits>4.0</credits>
+                <grade>71</grade>
+                <grade_letter>D</grade_letter>
+            </course>
+        </courses>
+    </student>
+
+    <student>
+        <full_name>Лисенко Анна Вікторівна</full_name>
+        <department>
+            <faculty>Економічний факультет</faculty>
+            <chair>Кафедра економічної кібернетики</chair>
+            <course_year>2</course_year>
+            <group>ЕК-21</group>
+        </department>
+        <courses>
+            <course>
+                <title>Економіко-математичне моделювання</title>
+                <credits>5.0</credits>
+                <grade>93</grade>
+                <grade_letter>A</grade_letter>
+            </course>
+            <course>
+                <title>Мікроекономіка</title>
+                <credits>4.0</credits>
+                <grade>87</grade>
+                <grade_letter>B</grade_letter>
+            </course>
+            <course>
+                <title>Теорія ймовірностей</title>
+                <credits>4.5</credits>
+                <grade>81</grade>
+                <grade_letter>B</grade_letter>
+            </course>
+        </courses>
+    </student>
+
+    <student>
+        <full_name>Сидоренко Владислав Юрійович</full_name>
+        <department>
+            <faculty>Фізичний факультет</faculty>
+            <chair>Кафедра квантової теорії поля</chair>
+            <course_year>4</course_year>
+            <group>ФЗ-41</group>
+        </department>
+        <courses>
+            <course>
+                <title>Квантова механіка</title>
+                <credits>6.0</credits>
+                <grade>97</grade>
+                <grade_letter>A</grade_letter>
+            </course>
+            <course>
+                <title>Статистична фізика</title>
+                <credits>5.0</credits>
+                <grade>89</grade>
+                <grade_letter>B</grade_letter>
+            </course>
+            <course>
+                <title>Електродинаміка</title>
+                <credits>5.5</credits>
+                <grade>92</grade>
+                <grade_letter>A</grade_letter>
+            </course>
+        </courses>
+    </student>
+
+    <student>
+        <full_name>Павленко Анастасія Романівна</full_name>
+        <department>
+            <faculty>Факультет комп'ютерних наук та кібернетики</faculty>
+            <chair>Кафедра програмних систем</chair>
+            <course_year>2</course_year>
+            <group>К-21</group>
+        </department>
+        <courses>
+            <course>
+                <title>Бази даних</title>
+                <credits>5.0</credits>
+                <grade>95</grade>
+                <grade_letter>A</grade_letter>
+            </course>
+            <course>
+                <title>Об'єктно-орієнтоване програмування</title>
+                <credits>5.0</credits>
+                <grade>91</grade>
+                <grade_letter>A</grade_letter>
+            </course>
+            <course>
+                <title>Операційні системи</title>
+                <credits>4.5</credits>
+                <grade>85</grade>
+                <grade_letter>B</grade_letter>
+            </course>
+        </courses>
+    </student>
+
+    <student>
+        <full_name>Марченко Артем Денисович</full_name>
+        <department>
+            <faculty>Механіко-математичний факультет</faculty>
+            <chair>Кафедра теорії ймовірностей та математичної статистики</chair>
+            <course_year>3</course_year>
+            <group>ММ-31</group>
+        </department>
+        <courses>
+            <course>
+                <title>Випадкові процеси</title>
+                <credits>5.0</credits>
+                <grade>88</grade>
+                <grade_letter>B</grade_letter>
+            </course>
+            <course>
+                <title>Математична статистика</title>
+                <credits>4.5</credits>
+                <grade>94</grade>
+                <grade_letter>A</grade_letter>
+            </course>
+            <course>
+                <title>Актуарна математика</title>
+                <credits>3.5</credits>
+                <grade>76</grade>
+                <grade_letter>C</grade_letter>
+            </course>
+        </courses>
+    </student>
+
+    <student>
+        <full_name>Поліщук Дарина Тарасівна</full_name>
+        <department>
+            <faculty>Економічний факультет</faculty>
+            <chair>Кафедра фінансів</chair>
+            <course_year>1</course_year>
+            <group>ЕФ-11</group>
+        </department>
+        <courses>
+            <course>
+                <title>Макроекономіка</title>
+                <credits>4.0</credits>
+                <grade>65</grade>
+                <grade_letter>E</grade_letter>
+            </course>
+            <course>
+                <title>Фінансовий облік</title>
+                <credits>5.0</credits>
+                <grade>77</grade>
+                <grade_letter>C</grade_letter>
+            </course>
+        </courses>
+    </student>
+
+    <student>
+        <full_name>Руденко Ярослав Михайлович</full_name>
+        <department>
+            <faculty>Факультет радіофізики, електроніки та комп'ютерних систем</faculty>
+            <chair>Кафедра напівпровідникової електроніки</chair>
+            <course_year>2</course_year>
+            <group>РЕ-21</group>
+        </department>
+        <courses>
+            <course>
+                <title>Схемотехніка</title>
+                <credits>5.0</credits>
+                <grade>83</grade>
+                <grade_letter>B</grade_letter>
+            </course>
+            <course>
+                <title>Фізика напівпровідників</title>
+                <credits>4.5</credits>
+                <grade>79</grade>
+                <grade_letter>C</grade_letter>
+            </course>
+        </courses>
+    </student>
+
+    <student>
+        <full_name>Савченко Катерина Павлівна</full_name>
+        <department>
+            <faculty>Факультет комп'ютерних наук та кібернетики</faculty>
+            <chair>Кафедра штучного інтелекту</chair>
+            <course_year>4</course_year>
+            <group>К-42</group>
+        </department>
+        <courses>
+            <course>
+                <title>Обробка природної мови</title>
+                <credits>4.5</credits>
+                <grade>99</grade>
+                <grade_letter>A</grade_letter>
+            </course>
+            <course>
+                <title>Хмарні обчислення</title>
+                <credits>4.0</credits>
+                <grade>92</grade>
+                <grade_letter>A</grade_letter>
+            </course>
+        </courses>
+    </student>
+
+    <student>
+        <full_name>Кузьменко Олег Віталійович</full_name>
+        <department>
+            <faculty>Фізичний факультет</faculty>
+            <chair>Кафедра астрономії та фізики космосу</chair>
+            <course_year>1</course_year>
+            <group>ФЗ-11</group>
+        </department>
+        <courses>
+            <course>
+                <title>Сферична астрономія</title>
+                <credits>4.0</credits>
+                <grade>80</grade>
+                <grade_letter>C</grade_letter>
+            </course>
+            <course>
+                <title>Загальна фізика: Механіка</title>
+                <credits>6.0</credits>
+                <grade>73</grade>
+                <grade_letter>D</grade_letter>
+            </course>
+        </courses>
+    </student>
+
+    <student>
+        <full_name>Василенко Євгеній Олексійович</full_name>
+        <department>
+            <faculty>Механіко-математичний факультет</faculty>
+            <chair>Кафедра алгебри та комп'ютерної математики</chair>
+            <course_year>3</course_year>
+            <group>ММ-32</group>
+        </department>
+        <courses>
+            <course>
+                <title>Криптографія</title>
+                <credits>4.5</credits>
+                <grade>87</grade>
+                <grade_letter>B</grade_letter>
+            </course>
+            <course>
+                <title>Теорія чисел</title>
+                <credits>4.0</credits>
+                <grade>90</grade>
+                <grade_letter>A</grade_letter>
+            </course>
+            <course>
+                <title>Дискретні структури</title>
+                <credits>4.0</credits>
+                <grade>85</grade>
+                <grade_letter>B</grade_letter>
             </course>
         </courses>
     </student>
