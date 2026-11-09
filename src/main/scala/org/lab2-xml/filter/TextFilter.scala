@@ -8,7 +8,7 @@ import org.lab2.tree.TreeNode
  * @param targetQuery Reversed tag hierarchy, e.g. List("faculty", "department")
  * @param query Substring or exact string to search for
  */
-case class GrepFilter(
+case class TextFilter(
   targetQuery: List[String],
   var query: String = ""
 ) extends TreeFilter:
@@ -23,4 +23,4 @@ case class GrepFilter(
         false
       else
         // Existential semantics: passes if at least one matching leaf contains the query
-        matchingLeaves.exists(_.text.toLowerCase.contains(cleanQuery))
+        matchingLeaves.exists(_.text.toLowerCase == cleanQuery)

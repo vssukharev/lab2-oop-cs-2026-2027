@@ -6,12 +6,12 @@ import scalafx.scene.layout.{HBox, VBox, Priority}
 import scalafx.geometry.{Insets, Pos}
 import scalafx.collections.ObservableBuffer
 import org.lab2.tree.TreeNode
-import org.lab2.filter.{FilterItem, GrepFilter, RangeFilter, ConjunctiveFilter}
+import org.lab2.filter.{FilterItem, TextFilter, RangeFilter, ConjunctiveFilter}
 import org.lab2.controller.ControllerState
 
-class GrepFilterRowView(
+class TextFilterRowView(
   displayName: String,
-  val filter: GrepFilter,
+  val filter: TextFilter,
   val filterItem: FilterItem
 ) extends VBox:
   spacing = 2
@@ -77,19 +77,19 @@ class FilterPanelView(onApplyFilters: () => Unit) extends VBox:
     style = "-fx-font-weight: bold; -fx-font-size: 13px;"
 
   // 1. Full name
-  val fullNameFilter = GrepFilter(List("full_name"))
+  val fullNameFilter = TextFilter(List("full_name"))
   val fullNameItem = FilterItem("Full Name", fullNameFilter)
-  val fullNameRow = GrepFilterRowView("Full Name", fullNameFilter, fullNameItem)
+  val fullNameRow = TextFilterRowView("Full Name", fullNameFilter, fullNameItem)
 
   // 2. Faculty
-  val facultyFilter = GrepFilter(List("faculty", "department"))
+  val facultyFilter = TextFilter(List("faculty", "department"))
   val facultyItem = FilterItem("Faculty", facultyFilter)
-  val facultyRow = GrepFilterRowView("Faculty", facultyFilter, facultyItem)
+  val facultyRow = TextFilterRowView("Faculty", facultyFilter, facultyItem)
 
   // 3. Chair
-  val chairFilter = GrepFilter(List("chair", "department"))
+  val chairFilter = TextFilter(List("chair", "department"))
   val chairItem = FilterItem("Chair", chairFilter)
-  val chairRow = GrepFilterRowView("Chair", chairFilter, chairItem)
+  val chairRow = TextFilterRowView("Chair", chairFilter, chairItem)
 
   // 4. Course Year
   val yearFilter = RangeFilter(List("course_year", "department"))
@@ -97,14 +97,14 @@ class FilterPanelView(onApplyFilters: () => Unit) extends VBox:
   val yearRow = RangeFilterRowView("Course Year", yearFilter, yearItem)
 
   // 5. Group
-  val groupFilter = GrepFilter(List("group", "department"))
+  val groupFilter = TextFilter(List("group", "department"))
   val groupItem = FilterItem("Group", groupFilter)
-  val groupRow = GrepFilterRowView("Group", groupFilter, groupItem)
+  val groupRow = TextFilterRowView("Group", groupFilter, groupItem)
 
   // 6. Course Title
-  val titleFilter = GrepFilter(List("title", "course", "courses"))
+  val titleFilter = TextFilter(List("title", "course", "courses"))
   val titleItem = FilterItem("Course Title", titleFilter)
-  val titleRow = GrepFilterRowView("Course Title", titleFilter, titleItem)
+  val titleRow = TextFilterRowView("Course Title", titleFilter, titleItem)
 
   // 7. Grade
   val gradeFilter = RangeFilter(List("grade", "course", "courses"))
@@ -112,9 +112,9 @@ class FilterPanelView(onApplyFilters: () => Unit) extends VBox:
   val gradeRow = RangeFilterRowView("Course Grade", gradeFilter, gradeItem)
 
   // 8. Grade Letter
-  val letterFilter = GrepFilter(List("grade_letter", "course", "courses"))
+  val letterFilter = TextFilter(List("grade_letter", "course", "courses"))
   val letterItem = FilterItem("Grade Letter", letterFilter)
-  val letterRow = GrepFilterRowView("Grade Letter", letterFilter, letterItem)
+  val letterRow = TextFilterRowView("Grade Letter", letterFilter, letterItem)
 
   private val grepRows = Seq(fullNameRow, facultyRow, chairRow, groupRow, titleRow, letterRow)
 

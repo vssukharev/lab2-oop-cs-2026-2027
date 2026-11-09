@@ -27,3 +27,4 @@ trait TreeFilter:
    * Checks if an entity record (e.g. <student>) matches this filter.
    */
   def matchesRecord(record: TreeNode): Boolean
+

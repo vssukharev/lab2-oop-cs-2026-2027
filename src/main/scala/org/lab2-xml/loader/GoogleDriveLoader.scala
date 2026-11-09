@@ -85,7 +85,7 @@ object GoogleDriveLoader:
   def getService(): Drive =
     _service.getOrElse {
       val s = new Drive.Builder(transport, jsonFactory, getCredential())
-        .setApplicationName("lab2-xml")
+        .setApplicationName("tubs")
         .build()
       _service = Some(s)
       s

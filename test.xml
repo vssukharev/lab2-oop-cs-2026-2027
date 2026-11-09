@@ -32,6 +32,36 @@
     </student>
 
     <student>
+        <full_name>Коваленко Олександр Олександрович 2</full_name>
+        <department>
+            <faculty>Факультет комп'ютерних наук та кібернетики</faculty>
+            <chair>Кафедра програмних систем</chair>
+            <course_year>2</course_year>
+            <group>К-21</group>
+        </department>
+        <courses>
+            <course>
+                <title>Об'єктно-орієнтоване програмування</title>
+                <credits>5.0</credits>
+                <grade>95</grade>
+                <grade_letter>A</grade_letter>
+            </course>
+            <course>
+                <title>Математичний аналіз</title>
+                <credits>6.0</credits>
+                <grade>88</grade>
+                <grade_letter>B</grade_letter>
+            </course>
+            <course>
+                <title>Дискретна математика</title>
+                <credits>4.5</credits>
+                <grade>92</grade>
+                <grade_letter>A</grade_letter>
+            </course>
+        </courses>
+    </student>
+
+    <student>
         <full_name>Мельник Ірина Василівна</full_name>
         <department>
             <faculty>Механіко-математичний факультет</faculty>
