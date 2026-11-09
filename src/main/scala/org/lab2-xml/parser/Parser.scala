@@ -1,9 +1,10 @@
+package org.lab2.parser
 
-package org.lab2
+import org.lab2.tree.TreeNode
+import scala.util.Try
 
-type AttributePath = List[String]
-
+/**
+ * Strategy trait for XML parsers.
+ */
 trait Parser:
-  def apply(fileName: String): Unit
-  def apply(content: String): Unit
-
+  def apply(content: String): Try[TreeNode]

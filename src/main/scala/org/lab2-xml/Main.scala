@@ -1,11 +1,14 @@
-
 package org.lab2
 
+import scalafx.application.JFXApp3
+import scalafx.scene.Scene
+import org.lab2.view.MainView
 
+object Main extends JFXApp3:
 
+  override def start(): Unit =
+    val mainView = new MainView()
 
-@main def main(): Unit =
-  val strategy = DomStrategy("test.xml")
-  println( strategy.getPossibleValues("student" :: "department" :: "faculty" :: Nil) )
-  println( strategy.getPossibleValues("student" :: "full_name" :: Nil) )
-
+    stage = new JFXApp3.PrimaryStage:
+      title = "XML to HTML Processor (DOM & SAX)"
+      scene = new Scene(mainView, 1050, 720)
