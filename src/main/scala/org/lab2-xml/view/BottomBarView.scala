@@ -1,7 +1,7 @@
 package org.lab2.view
 
 import scalafx.Includes.*
-import scalafx.scene.control.Button
+import scalafx.scene.control.Label
 import scalafx.scene.layout.{HBox, Priority, Region}
 import scalafx.geometry.{Insets, Pos}
 import scalafx.stage.FileChooser
@@ -34,14 +34,7 @@ class BottomBarView(
   val spacer = new Region:
     hgrow = Priority.Always
 
-  val openLogButton = new Button("Open log file"):
-    onAction = _ =>
-      val logPath = Logger.getLogFile
-      try
-        val editor = sys.env.get("EDITOR").filter(_.trim.nonEmpty).getOrElse("xdg-open")
-        new ProcessBuilder(editor, logPath).start()
-      catch
-        case ex: Exception =>
-          DialogUtils.showError("Log File Error", s"Failed to open log file ($logPath): ${ex.getMessage}", Some(ex))
+  val logLabel = new Label(s"Log file: ${Logger.logFileCanonicalPath}"):
+    style = "-fx-text-fill: #6c757d; -fx-font-size: 11px;"
 
-  children = Seq(exportXmlButton, exportHtmlButton, spacer, openLogButton)
+  children = Seq(exportXmlButton, exportHtmlButton, spacer, logLabel)

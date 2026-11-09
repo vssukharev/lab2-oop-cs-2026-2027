@@ -1,30 +1,21 @@
 package org.lab2.misc
 
-import java.io.{FileWriter, PrintWriter}
+import java.io.{File, FileWriter, PrintWriter}
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
-import scala.util.Using
 
 object Logger:
-  private var _logFilePath: String = "app.log"
+  val logFilePath = "app.log"
+  val logFileCanonicalPath = File(logFilePath).getCanonicalPath
+
   private val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")
-
-  def setLogFile(path: String): Unit =
-    _logFilePath = path
-
-  def getLogFile: String = _logFilePath
+  private val writer = PrintWriter(FileWriter(logFilePath, true), true)
 
   private def log(level: String, message: String): Unit =
     val time = LocalDateTime.now().format(formatter)
     val entry = s"[$time] [$level] $message"
     println(entry)
-    try
-      Using(new PrintWriter(new FileWriter(_logFilePath, true))) { writer =>
-        writer.println(entry)
-      }
-    catch
-      case ex: Exception =>
-        System.err.println(s"Failed to write to log file ${_logFilePath}: ${ex.getMessage}")
+    writer.println(entry)
 
   def info(message: String): Unit = log("INFO", message)
 
