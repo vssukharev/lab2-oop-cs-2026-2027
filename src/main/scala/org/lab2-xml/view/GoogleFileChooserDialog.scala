@@ -9,7 +9,7 @@ import org.lab2.loader.{FileProps, GoogleDriveLoader, StorageKind}
 
 object GoogleFileChooserDialog:
 
-  def show(titleText: String, defaultName: String = "", forSave: Boolean = false): Option[FileProps] =
+  def show(titleText: String, defaultName: String = "", operation: FileOperation = FileOperation.Load): Option[FileProps] =
     val listingTry = GoogleDriveLoader.getListing()
     val files = listingTry match
       case Success(list) => list

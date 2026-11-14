@@ -30,7 +30,7 @@ class FileSelectionView(
 
   private val remoteItem = new MenuItem(if operation == FileOperation.Load then "From Google Drive..." else "To Google Drive..."):
     onAction = _ =>
-      GoogleFileChooserDialog.show(remoteTitle, forSave = (operation == FileOperation.Save)).foreach { props =>
+      GoogleFileChooserDialog.show(remoteTitle, operation = operation).foreach { props =>
         onFileSelected(props)
       }
 

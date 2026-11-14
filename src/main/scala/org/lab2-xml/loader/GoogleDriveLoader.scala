@@ -6,10 +6,12 @@ import java.io.{ByteArrayInputStream, File, FileInputStream, FileNotFoundExcepti
 import java.nio.charset.StandardCharsets
 import java.util.Collections
 import scala.jdk.CollectionConverters.*
+import scala.sys.process.*
 
 import com.google.api.client.json.gson.GsonFactory
 import com.google.api.client.extensions.jetty.auth.oauth2.LocalServerReceiver
 import com.google.api.client.googleapis.auth.oauth2.{GoogleAuthorizationCodeFlow, GoogleClientSecrets}
+import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport
 import com.google.api.client.http.javanet.NetHttpTransport
 import com.google.api.client.util.store.FileDataStoreFactory
 import com.google.api.client.extensions.java6.auth.oauth2.AuthorizationCodeInstalledApp
@@ -63,33 +65,35 @@ object GoogleDriveLoader:
   val root: java.util.List[String] = Collections.singletonList(appData)
   val jsonFactory: GsonFactory = GsonFactory.getDefaultInstance()
   val scopes: java.util.List[String] = Collections.singletonList(DriveScopes.DRIVE_APPDATA)
-  val transport: NetHttpTransport = NetHttpTransport()
+  val transport: NetHttpTransport = GoogleNetHttpTransport.newTrustedTransport()
 
-  private var _service: Option[Drive] = None
+  private var _service: Drive =
+    new Drive.Builder(transport, jsonFactory, getCredential())
+      .setApplicationName("lab2-oop")
+      .build()
 
   def getCredential(): Credential =
     val secretsFile = new File(config.googleSecretsPath)
     if !secretsFile.exists() then
       throw new FileNotFoundException(s"Google client secrets not found at: ${config.googleSecretsPath}")
 
-    val is = new InputStreamReader(new FileInputStream(secretsFile))
+    val is = InputStreamReader(FileInputStream(secretsFile))
     val secrets = GoogleClientSecrets.load(jsonFactory, is)
-    val flow = new GoogleAuthorizationCodeFlow.Builder(transport, jsonFactory, secrets, scopes)
-      .setDataStoreFactory(new FileDataStoreFactory(new File(config.googleDataStore)))
+    val flow = GoogleAuthorizationCodeFlow.Builder(transport, jsonFactory, secrets, scopes)
+      .setDataStoreFactory(FileDataStoreFactory(File(config.googleDataStore)))
+      .setAccessType("offline")
       .build()
-    val receiver = new LocalServerReceiver.Builder()
+    val receiver = LocalServerReceiver.Builder()
       .setPort(6969)
       .build()
-    new AuthorizationCodeInstalledApp(flow, receiver).authorize("user")
+    val browser = new AuthorizationCodeInstalledApp.Browser:
+      override def browse(url: String): Unit =
+        println(s"Open URL link in your browser: $url")
 
-  def getService(): Drive =
-    _service.getOrElse {
-      val s = new Drive.Builder(transport, jsonFactory, getCredential())
-        .setApplicationName("tubs")
-        .build()
-      _service = Some(s)
-      s
-    }
+    AuthorizationCodeInstalledApp(flow, receiver, browser)
+      .authorize("user")
+
+  def getService(): Drive = _service
 
   def getListing(): Try[List[GFile]] = Try {
     val fileList = getService().files().list()
