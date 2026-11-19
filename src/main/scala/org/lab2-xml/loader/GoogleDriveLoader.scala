@@ -20,7 +20,7 @@ import com.google.api.client.http.ByteArrayContent
 import com.google.api.services.drive.{Drive, DriveScopes}
 import com.google.api.services.drive.model.{File as GFile}
 
-import org.lab2.misc.AppConfig
+import org.lab2.controller.ControllerState
 
 /**
  * Headless Google Drive Loader interacting directly with Google Drive API v3.
@@ -60,14 +60,14 @@ class GoogleDriveLoader extends Loader:
   }
 
 object GoogleDriveLoader:
-  private val config = AppConfig()
-  val appData: String = "appDataFolder"
-  val root: java.util.List[String] = Collections.singletonList(appData)
-  val jsonFactory: GsonFactory = GsonFactory.getDefaultInstance()
-  val scopes: java.util.List[String] = Collections.singletonList(DriveScopes.DRIVE_APPDATA)
-  val transport: NetHttpTransport = GoogleNetHttpTransport.newTrustedTransport()
+  private def config = ControllerState.appConfig.value
+  private val appData: String = "appDataFolder"
+  private val root: java.util.List[String] = Collections.singletonList(appData)
+  private val jsonFactory: GsonFactory = GsonFactory.getDefaultInstance()
+  private val scopes: java.util.List[String] = Collections.singletonList(DriveScopes.DRIVE_APPDATA)
+  private val transport: NetHttpTransport = GoogleNetHttpTransport.newTrustedTransport()
 
-  private var _service: Drive =
+  private var service: Drive =
     new Drive.Builder(transport, jsonFactory, getCredential())
       .setApplicationName("lab2-oop")
       .build()
@@ -93,7 +93,7 @@ object GoogleDriveLoader:
     AuthorizationCodeInstalledApp(flow, receiver, browser)
       .authorize("user")
 
-  def getService(): Drive = _service
+  def getService(): Drive = service
 
   def getListing(): Try[List[GFile]] = Try {
     val fileList = getService().files().list()

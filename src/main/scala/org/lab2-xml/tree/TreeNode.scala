@@ -1,7 +1,5 @@
 package org.lab2.tree
 
-type AttributePath = List[String]
-
 /**
  * Immutable tree data structure representing an XML element node.
  * Purely functional without circular parent references.

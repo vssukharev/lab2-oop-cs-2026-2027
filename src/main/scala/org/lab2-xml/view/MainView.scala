@@ -14,19 +14,19 @@ class MainView extends BorderPane:
   private val xmlTransformer = new XmlTransformer()
   private var currentXslContent: Option[String] = None
 
-  lazy val topBarView = new TopBarView(
+  val topBarView = new TopBarView(
     onXmlSelected = handleXmlSelected,
     onXsltSelected = handleXsltSelected,
     onParserChanged = handleParserChanged
   )
 
-  lazy val filterPanelView = new FilterPanelView(
+  val filterPanelView = new FilterPanelView(
     onApplyFilters = () => applyFilters()
   )
 
-  lazy val contentView = new ContentView()
+  val contentView = new ContentView()
 
-  lazy val bottomBarView = new BottomBarView(
+  val bottomBarView = new BottomBarView(
     onExportXml = handleExportXml,
     onExportHtml = handleExportHtml
   )
@@ -45,17 +45,6 @@ class MainView extends BorderPane:
         parseAndApply(rawContent)
       case Failure(ex) =>
         DialogUtils.showError("Failed to Load XML", s"Error loading file: ${ex.getMessage}", Some(ex))
-
-  private def parseAndApply(rawContent: String): Unit =
-    val parser = ControllerState.parser.value
-    parser(rawContent) match
-      case Success(tree) =>
-        Logger.info(s"Parsed XML using ${parser.getClass.getSimpleName}. Root node: <${tree.name}> with ${tree.children.size} child records.")
-        ControllerState.sourceTree.value = Some(tree)
-        filterPanelView.updatePossibleValues(tree)
-        applyFilters()
-      case Failure(ex) =>
-        DialogUtils.showError("XML Parsing Failed", s"Parser encountered an error: ${ex.getMessage}", Some(ex))
 
   def handleXsltSelected(fileProps: FileProps): Unit =
     val loader = Loader(fileProps.storageKind)
@@ -97,7 +86,18 @@ class MainView extends BorderPane:
         // No XML loaded yet
         ()
 
-  private def renderHtml(): Unit =
+  def parseAndApply(rawContent: String): Unit =
+    val parser = ControllerState.parser.value
+    parser(rawContent) match
+      case Success(tree) =>
+        Logger.info(s"Parsed XML using ${parser.getClass.getSimpleName}. Root node: <${tree.name}> with ${tree.children.size} child records.")
+        ControllerState.sourceTree.value = Some(tree)
+        filterPanelView.updatePossibleValues(tree)
+        applyFilters()
+      case Failure(ex) =>
+        DialogUtils.showError("XML Parsing Failed", s"Parser encountered an error: ${ex.getMessage}", Some(ex))
+
+  def renderHtml(): Unit =
     val targetTree = ControllerState.displayedTree.value.orElse(ControllerState.sourceTree.value)
     (targetTree, currentXslContent) match
       case (Some(tree), Some(xsl)) =>

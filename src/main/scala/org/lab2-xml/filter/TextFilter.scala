@@ -8,8 +8,8 @@ import org.lab2.tree.TreeNode
  * @param targetQuery Reversed tag hierarchy, e.g. List("faculty", "department")
  * @param query Substring or exact string to search for
  */
-case class TextFilter(
-  targetQuery: List[String],
+class TextFilter(
+  val targetQuery: List[String],
   var query: String = ""
 ) extends TreeFilter:
 

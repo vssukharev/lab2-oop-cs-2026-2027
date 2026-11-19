@@ -9,8 +9,8 @@ import org.lab2.tree.TreeNode
  * @param min Optional lower bound
  * @param max Optional upper bound
  */
-case class RangeFilter(
-  targetQuery: List[String],
+class RangeFilter(
+  val targetQuery: List[String],
   var min: Option[Double] = None,
   var max: Option[Double] = None
 ) extends TreeFilter:
